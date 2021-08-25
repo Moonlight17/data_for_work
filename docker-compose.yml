@@ -56,6 +56,16 @@ services:
       - data03:/usr/share/elasticsearch/data
     networks:
       - elastic
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.14.0
+    container_name: kibana
+    environment:
+      - SERVER_NAME: localhost
+      # - ELASTICSEARCH_HOSTS: 
+    volumes:
+      - kibana:/usr/share/kibana/config
+    networks:
+      - elastic
 
 volumes:
   data01:
@@ -63,6 +73,8 @@ volumes:
   data02:
     driver: local
   data03:
+    driver: local
+  kibana:
     driver: local
 
 networks:
