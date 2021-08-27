@@ -1,2 +1,7 @@
 #папка с исходниками контейнеров
 source/
+docker-data-volumes/
+elasticsearch/
+
+
+
